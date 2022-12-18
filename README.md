@@ -1,2 +1,3 @@
 # compression-par-fenetres
-Projet algorithmique avancée
+
+## Projet algorithmique avancée

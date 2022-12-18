@@ -1,4 +1,3 @@
-
 CC = gcc
 MACHINE= $(shell uname -s)
 

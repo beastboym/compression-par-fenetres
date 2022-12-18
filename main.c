@@ -88,7 +88,7 @@ void menuFunc(int item) {
     break;
   case 1:
     printf("gris\n");
-    gris_uniforme(image);
+    gris_uniforme(image,32);
     printf("Taille de l image : %d %d\n", (int) image->sizeX, (int) image->sizeY);
     Display();
     break;
@@ -100,6 +100,9 @@ void menuFunc(int item) {
   case 3:
     printf("Taille de l image : %d %d\n", (int) image->sizeX, (int) image->sizeY);
     break;
+    case 4:
+    printf("tab : \n");
+    // imageTab(image);
   default:
     break;
   }
@@ -125,6 +128,7 @@ int main(int argc, char **argv) {
   glutAddMenuEntry("grey", 1);
   glutAddMenuEntry("Sauver", 2);
   glutAddMenuEntry("Informations", 3);
+  glutAddMenuEntry("tab", 4);
   glutAttachMenu(GLUT_LEFT_BUTTON);
 
   glutDisplayFunc(Display);  
