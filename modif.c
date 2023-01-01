@@ -73,6 +73,17 @@ void update_bloc(Image *i, int j, int k, int n, GLubyte val)
     }
   }
 }
+/**
+ *
+ * Les autres pixels du bloc sont mis à jour avec la valeur 0.
+ *
+ * Paramètres :
+i – Pointeur sur l'image.
+j – Indice de ligne du début du bloc.
+k – Indice de colonne du début du bloc.
+n – Taille du côté du bloc (nxn).
+val – Valeur à utiliser pour mettre à jour les pixels sélectionnés.
+ */
 void gris_uniforme(Image *i, int n)
 {
   // Parcours des blocs de n*n pixels de l'image
