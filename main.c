@@ -52,12 +52,10 @@ int Init(char *s)
 
   return (0);
 }
+
 int ReInit()
 {
-  /*
-  if (ImageLoad_PPM(s, image)==-1)
-  return(-1);
-  */
+
   glClearColor(0.0, 0.0, 0.0, 0.0);
   glShadeModel(GL_FLAT);
   glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
@@ -98,8 +96,8 @@ void menuFunc(int item)
     exit(0);
     break;
   case 1:
-    printf("gris\n");
-    gris_uniforme(image, 16);
+    printf("compression\n");
+    compression(image, 4);
     printf("Taille de l image : %d %d\n", (int)image->sizeX, (int)image->sizeY);
     Display();
     break;
@@ -112,8 +110,9 @@ void menuFunc(int item)
     printf("Taille de l image : %d %d\n", (int)image->sizeX, (int)image->sizeY);
     break;
   case 4:
-    printf("tab : \n");
-    // imageTab(image);
+    décompression(image);
+    Display();
+    printf("décompression : \n");
   default:
     break;
   }
@@ -138,7 +137,7 @@ int main(int argc, char **argv)
 
   glutCreateMenu(menuFunc);
   glutAddMenuEntry("Quit", 0);
-  glutAddMenuEntry("grey", 1);
+  glutAddMenuEntry("compression", 1);
   glutAddMenuEntry("Sauver", 2);
   glutAddMenuEntry("Informations", 3);
   glutAddMenuEntry("tab", 4);
